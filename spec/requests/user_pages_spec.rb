@@ -29,6 +29,10 @@ describe "User pages" do
       it "should not create a user" do
         expect { click_button submit }.not_to change(User, :count)
       end
+      describe "after saving the user" do
+   
+        it { should have_link('Sign out') }
+      end
     end
 
     describe "with valid information" do
